@@ -1,4 +1,4 @@
-# PROJETO---SISTEMA-DE-CADASTRO-DE-ALUNOS
+## PROJETO--- Sistema de cadastro de Alunos
 Pequeno projeto para testar o conhecimento em Java
 
 ---------------------------------------------------------------------------------------------------------------------
