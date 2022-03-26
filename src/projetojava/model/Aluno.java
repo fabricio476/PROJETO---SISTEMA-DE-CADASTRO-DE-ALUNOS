@@ -1,5 +1,8 @@
 package projetojava.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Aluno {
 
 	
@@ -13,6 +16,10 @@ public class Aluno {
 	private String nomePai;
 	private String dataMatricula;
 	
+	/*lista de disciplinas do aluno*/
+	List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+	
+	
 	
 	/* construtor*/
     public Aluno() { 
@@ -20,7 +27,9 @@ public class Aluno {
 		
 	}
 
-
+  
+    
+    
     /* getters setters */
 	public String getNome() {
 		return nome;
