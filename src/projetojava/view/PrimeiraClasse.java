@@ -12,12 +12,12 @@ public class PrimeiraClasse {
 	
 	/*para entrada de dados do teclado no console*/
 	static Scanner scan = new Scanner(System.in);
-	
+	/* instancia __ objeto aluno*/
+	static Aluno aluno;
 
 	public static void main(String[] args) {
 		
-		/* instancia __ objeto aluno*/
-		Aluno aluno;
+		
 		
 		
 		
@@ -29,9 +29,9 @@ public class PrimeiraClasse {
 			System.out.println("-------------------------------------------------");
 			System.out.println("\t 1 - Matricular Aluno");
 			System.out.println("\t 2 - Lista Alunos Matriculados");
-			System.out.println("\t 3 - Apagar Aluno");
+			System.out.println("\t 3 - Buscar Aluno");
 			System.out.println("\t 4 - Editar Aluno");
-			System.out.println("\t 5 - Buscar Aluno");
+			System.out.println("\t 5 - Excluir Aluno");
 			System.out.println("\t-------------------------");
             System.out.println("\t 6 - Cadastrar Disciplina");
 			System.out.println("\t 7 - Excluir Disciplina");
@@ -47,17 +47,21 @@ public class PrimeiraClasse {
 				cadastrarAluno(aluno);
 				
 				
-				opcao = 0;
+				opcao = 0; /*continuar na tela inicial*/
 				break;
 				
 	        case 2:
 	        	
 	        	listarAlunos();
 				
+	        	opcao = 0;
 				break;
 				
 	        case 3:
 		
+	        	buscarAluno();
+	        	
+	        	opcao = 0;
 		       break;
 		
 	        case 4:
@@ -116,6 +120,21 @@ public class PrimeiraClasse {
 			 System.out.println("Idade = "+ aluno.getIdade());
 			 System.out.println("---------------------------------------");
 		}
+	 }
+	 
+	 
+	 /*buscar aluno pelo nome*/
+	 public static void buscarAluno() {
+		 String nome;
+		 aluno = new Aluno();
+		 
+		 System.out.println("Qual o nome do aluno?");
+		 nome = scan.next();
+		 
+		
+		aluno = ControllerAlunoDisciplina.BuscaAlunoNome(nome);
+		 
+		System.out.println(aluno.toString());
 	 }
 	
 

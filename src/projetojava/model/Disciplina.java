@@ -29,9 +29,19 @@ public class Disciplina {
 	public void setNotaDisciplina(double notaDisciplina) {
 		this.notaDisciplina = notaDisciplina;
 	}
+
+
+	//---
+	
+	@Override
+	public String toString() {
+		return "Disciplina [nomeDisciplina=" + nomeDisciplina + ", notaDisciplina=" + notaDisciplina + "]";
+	}
 	
 	
 	
+	
+	//------
 	
 	
 	
