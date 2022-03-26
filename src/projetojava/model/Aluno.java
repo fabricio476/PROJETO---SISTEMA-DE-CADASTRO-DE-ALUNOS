@@ -12,7 +12,7 @@ public class Aluno {
 	
 	/* atributos*/
 	private String nome;
-	private int idade;
+	private String idade;
 	private String dataNascimneto;
 	private String RG;
 	private String CPF;
@@ -45,12 +45,12 @@ public class Aluno {
 	}
 
 
-	public int getIdade() {
+	public String getIdade() {
 		return idade;
 	}
 
 
-	public void setIdade(int idade) {
+	public void setIdade(String idade) {
 		this.idade = idade;
 	}
 

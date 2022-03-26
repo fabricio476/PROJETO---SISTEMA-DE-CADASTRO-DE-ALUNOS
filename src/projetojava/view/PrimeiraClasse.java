@@ -33,7 +33,7 @@ public class PrimeiraClasse {
 			System.out.println("\t 4 - Editar Aluno");
 			System.out.println("\t 5 - Excluir Aluno");
 			System.out.println("\t-------------------------");
-            System.out.println("\t 6 - Cadastrar Disciplina");
+            System.out.println("\t 6 - Cadastrar Disciplina ");
 			System.out.println("\t 7 - Excluir Disciplina");
 			System.out.println("---------------------------------------------------");
 			opcao = scan.nextInt();
@@ -65,7 +65,10 @@ public class PrimeiraClasse {
 		       break;
 		
 	        case 4:
+	        	
+	        	editarAluno();
 		
+	        	opcao =0;
 		       break;
 		       
 	        case 5:
@@ -105,7 +108,7 @@ public class PrimeiraClasse {
 		System.out.println("nome do aluno :");
 		aluno.setNome(scan.next());
 		System.out.println("idade do aluno");
-		aluno.setIdade(scan.nextInt());
+		aluno.setIdade(scan.next());
 	
 		ControllerAlunoDisciplina.alunos.add(aluno);
 	}
@@ -133,9 +136,74 @@ public class PrimeiraClasse {
 		 
 		
 		aluno = ControllerAlunoDisciplina.BuscaAlunoNome(nome);
-		 
-		System.out.println(aluno.toString());
+		
+		    if(aluno == null) {
+			
+			   System.out.println("Aluno não encontrado !");
+			
+		    }else {
+			
+		     	System.out.println(aluno.toString());
+			
+	     	}
+		 	
 	 }
+	 
+	 /*Editar Aluno*/
+	 public static void editarAluno() {
+		 
+		 aluno = new Aluno();
+		 
+		 System.out.println("Qual o nome do aluno para editar");
+		 String nome = scan.next();
+		 
+		 aluno = ControllerAlunoDisciplina.BuscaAlunoNome(nome);
+		 
+
+			
+		    if(aluno == null) {
+			
+			   System.out.println("Aluno não encontrado !");
+			   
+		    }else {
+		    	
+		    	int op = 0;
+		     	System.out.println(" EDITAR ALUNO -> "+aluno.toString());
+		     	int index = ControllerAlunoDisciplina.alunos.indexOf(aluno); /*pega o index do aluno na lista*/
+		     	
+		        	do {
+		     		
+		     		System.out.println("\t 1 - Editar NOME ");
+			     	System.out.println("\t 2 - Editar IDADE ");
+			     	System.out.println("\t 0 - Sair ");
+		     		int opcao = scan.nextInt();
+		     		
+		     		if(opcao == 1) {
+		     			
+		     		System.out.println("Qual o novo NOME?");
+		     		String nomeNovo = scan.next();
+		     		ControllerAlunoDisciplina.alunos.get(index).setNome(nomeNovo); /*LOCALIZA o aluno da lista pelo INDEX e autera o NOME*/
+		     			
+		     			break;
+		     		}else if(opcao == 2) {
+		     			
+		     		System.out.println("Qual o nova IDADE?");
+		     		String idadeNova = scan.next();
+		     		ControllerAlunoDisciplina.alunos.get(index).setIdade(idadeNova);/*LOCALIZA o aluno da lista pelo INDEX e autera a IDADE*/
+		     			
+		     			break;
+		     			
+		     		}else if(opcao == 0){
+		     			
+		     			break;
+		     		}
+			     	
+		     		
+		        	}while(op <=2);
+		     	
+		     	  	
+	     	}	 
+	   }
 	
 
 }
