@@ -1,7 +1,10 @@
 package projetojava.model;
 
 import java.util.ArrayList;
+
 import java.util.List;
+
+
 
 public class Aluno {
 
@@ -111,6 +114,20 @@ public class Aluno {
 	}
     
     
+	/*calcula e retorna a media das disciplinas*/
+	public double mediAluno() {
+		
+	double mediaNota=0;
+	
+	for(int i=0; i<= this.disciplinas.size();i++) {
+		
+		mediaNota += this.disciplinas.get(i).getNotaDisciplina();
+		
+	}
+		
+	
+	 return mediaNota;
+	}
     
 	
 	

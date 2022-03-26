@@ -4,7 +4,7 @@ public class Disciplina {
 	
 	/*parametro*/
 	private String nomeDisciplina;
-	private String notaDisciplina;
+	private double notaDisciplina;
 	
 	/*construtor*/
 	public Disciplina() {
@@ -22,11 +22,11 @@ public class Disciplina {
 		this.nomeDisciplina = nomeDisciplina;
 	}
 
-	public String getNotaDisciplina() {
+	public double getNotaDisciplina() {
 		return notaDisciplina;
 	}
 
-	public void setNotaDisciplina(String notaDisciplina) {
+	public void setNotaDisciplina(double notaDisciplina) {
 		this.notaDisciplina = notaDisciplina;
 	}
 	
