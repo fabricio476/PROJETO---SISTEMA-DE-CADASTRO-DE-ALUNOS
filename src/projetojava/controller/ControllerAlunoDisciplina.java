@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import projetojava.model.Aluno;
+import projetojava.model.Disciplina;
 
 
 
@@ -11,6 +12,7 @@ import projetojava.model.Aluno;
 
 public class ControllerAlunoDisciplina {
 	
+	public static List<Disciplina> disciplinasDisponiveis = new ArrayList<Disciplina>();
 	public static List<Aluno> alunos = new ArrayList<Aluno>();
 	
 	

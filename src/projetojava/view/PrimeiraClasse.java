@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import projetojava.controller.ControllerAlunoDisciplina;
 import projetojava.model.Aluno;
+import projetojava.model.Disciplina;
 
 public class PrimeiraClasse {
 	
@@ -14,6 +15,7 @@ public class PrimeiraClasse {
 	static Scanner scan = new Scanner(System.in);
 	/* instancia __ objeto aluno*/
 	static Aluno aluno;
+	static Disciplina disciplinas;
 
 	public static void main(String[] args) {
 		
@@ -34,7 +36,8 @@ public class PrimeiraClasse {
 			System.out.println("\t 5 - Excluir Aluno");
 			System.out.println("\t-------------------------");
             System.out.println("\t 6 - Cadastrar Disciplina ");
-			System.out.println("\t 7 - Excluir Disciplina");
+            System.out.println("\t 7 - Listar Disciplinas Disponiveis");
+			System.out.println("\t 8 - Editar Disciplinas");
 			System.out.println("---------------------------------------------------");
 			opcao = scan.nextInt();
 			
@@ -80,6 +83,10 @@ public class PrimeiraClasse {
 	 	       break;  
 	 	       
 	        case 6:
+	        	
+	        	cadastarDisciplina();
+	        	
+	        	opcao=0;
 	        	
 	  	       break;  
 	  	       
@@ -234,16 +241,43 @@ public class PrimeiraClasse {
 	    	  
 	    	  System.out.println("Aluno EXCLUIDO !!!!");
 	    	  
-	      }
-		   
-		   
-		   
+	        }   
 	   }
+	//------------------------------------------------------------------ 
 	 
+	  public static void cadastarDisciplina() {
+		  int op=0,ops=0;
+		 
+		 do {
+			 
+		disciplinas = new Disciplina();
+		
+		System.out.println(" Quer adicionar uma disciplina?");
+		System.out.println(" 1 - sim | 2 - não");
+		ops = scan.nextInt();
+		
+		  if(ops == 1) {
+			
+		  System.out.println("Qual o NOME da disciplina");
+		  String nomeDisciplina = scan.next();
+				  
+		  ControllerAlunoDisciplina.disciplinasDisponiveis.add(disciplinas); 
+			
+			
+		  }else if(ops == 2){
+		 	
+			
+			
+			 break;
+		   }
+		
+	
+			 
+		   }while(op == 0);
+		    
+	  }
 	 
-	 
-	 
-	 
+	
 	 
 	 
 	 
