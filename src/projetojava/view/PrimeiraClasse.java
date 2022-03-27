@@ -9,6 +9,8 @@ import projetojava.controller.ControllerAlunoDisciplina;
 import projetojava.model.Aluno;
 import projetojava.model.Disciplina;
 
+
+// -- FINALIZADO VERSÃO 1
 public class PrimeiraClasse {
 	
 	/*para entrada de dados do teclado no console*/
