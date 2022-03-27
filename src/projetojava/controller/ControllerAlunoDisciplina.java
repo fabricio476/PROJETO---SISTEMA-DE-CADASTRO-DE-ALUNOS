@@ -25,8 +25,7 @@ public class ControllerAlunoDisciplina {
 			
 			if(aluno.getNome().equalsIgnoreCase(nome)) {
 				
-				
-				
+
 				alunno = aluno;
 				
 				break;
@@ -40,26 +39,31 @@ public class ControllerAlunoDisciplina {
 		return alunno;
      }
 	
-	public static void editarAluno(int op ,String string, Aluno alunoEditar) {
-		
-		
-	               int i =	alunos.indexOf(alunoEditar);
-		
-	               alunos.get(i).setNome(string);
-		
-	           if(op == i) {
-	        	   
-	        	   
-	        	   
-	           }else if(op == 2) {
-	        	   
-	        	   
-	        	   
-	           }
-	        	   
-		
-		
-	}
+
+	 /* buscar disciplina */
+	 public static Disciplina BuscarDisciolina(String nome) {
+		 
+		 Disciplina disciplinna = new Disciplina();
+		 
+		 for(Disciplina disciplina : disciplinasDisponiveis) {
+			
+		     if(disciplina.getNomeDisciplina().equalsIgnoreCase(nome)){
+		    	 
+		    	 disciplinna = disciplina;
+		    	 
+		    	 break;
+		    	 
+		      }else {
+		    	  
+		    	  disciplinna = null;
+		    	  
+		      }
+			  
+		  }
+		 
+		 
+		return disciplinna; 
+	 }
 	
 	
 	

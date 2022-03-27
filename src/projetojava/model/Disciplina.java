@@ -43,6 +43,10 @@ public class Disciplina {
 	
 	//------
 	
+	public String toString2() {
+		return "Disciplina [Nome Disciplina :" + nomeDisciplina  + "]";
+	}
+	
 	
 	
 	

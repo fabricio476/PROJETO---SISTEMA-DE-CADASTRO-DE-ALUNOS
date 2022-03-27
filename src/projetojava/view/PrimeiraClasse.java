@@ -15,7 +15,7 @@ public class PrimeiraClasse {
 	static Scanner scan = new Scanner(System.in);
 	/* instancia __ objeto aluno*/
 	static Aluno aluno;
-	static Disciplina disciplinas;
+	static Disciplina disciplina;
 
 	public static void main(String[] args) {
 		
@@ -92,10 +92,24 @@ public class PrimeiraClasse {
 	  	       
 	        case 7:
 	        	
+	        	listarDisciplinas();
+	        	
+	        	opcao=0;
+	        	
+	  	       break;  
+	  	       
+            case 8:
+	        	
+            	editarDisciplina();
+	        	
+	        opcao=0;
+	        	
 	  	       break;  
 
 	 	       
 			default:
+				
+				opcao =0;
 				break;
 			}
 			
@@ -245,12 +259,13 @@ public class PrimeiraClasse {
 	   }
 	//------------------------------------------------------------------ 
 	 
+	  /* cadastrar disciplina*/ 
 	  public static void cadastarDisciplina() {
 		  int op=0,ops=0;
 		 
 		 do {
 			 
-		disciplinas = new Disciplina();
+		disciplina = new Disciplina();
 		
 		System.out.println(" Quer adicionar uma disciplina?");
 		System.out.println(" 1 - sim | 2 - não");
@@ -260,9 +275,12 @@ public class PrimeiraClasse {
 			
 		  System.out.println("Qual o NOME da disciplina");
 		  String nomeDisciplina = scan.next();
+		  
+		  disciplina.setNomeDisciplina(nomeDisciplina);
 				  
-		  ControllerAlunoDisciplina.disciplinasDisponiveis.add(disciplinas); 
+		  ControllerAlunoDisciplina.disciplinasDisponiveis.add(disciplina); 
 			
+		  System.out.println("Disciplina ADICIONADA");
 			
 		  }else if(ops == 2){
 		 	
@@ -276,8 +294,50 @@ public class PrimeiraClasse {
 		   }while(op == 0);
 		    
 	  }
+	  
+	  /*Listar Disciplina*/
+	  public static void listarDisciplinas() {
+		  
+		  for (Disciplina disciplina : ControllerAlunoDisciplina.disciplinasDisponiveis) {
+			  
+			  System.out.println(disciplina.toString2());
+			
+		}
+		    
+	  }
 	 
+	  /*editar disciplina*/
+	  public static void editarDisciplina() {
+		  
+		  String nome;
+		  disciplina = new Disciplina();
+		  
+		  System.out.println("Qual nome da Disciplina?");
+		  nome = scan.next();
+		  
+		  disciplina = ControllerAlunoDisciplina.BuscarDisciolina(nome);
+		  
+		  int index = ControllerAlunoDisciplina.disciplinasDisponiveis.indexOf(disciplina);
+		  
+		  System.out.println(" DISCIPLINA = 1- EXCLUIR | 2 -EDITAR");
+		  int op = scan.nextInt();
+		  
+		  if(op ==1) {
+			
+			ControllerAlunoDisciplina.disciplinasDisponiveis.remove(disciplina);  /*excluir disciplina*/
+			  
+		  }else if(op == 2) {
+			  
+			  System.out.println("Qual o NOVO nome da DISCIPLINA");
+			  ControllerAlunoDisciplina.disciplinasDisponiveis.get(index).setNomeDisciplina(scan.next()); /*alterar nome da disciplina*/
+			   
+		  }
+		  
+		  
+		  
+	  }
 	
+	  
 	 
 	 
 	 
