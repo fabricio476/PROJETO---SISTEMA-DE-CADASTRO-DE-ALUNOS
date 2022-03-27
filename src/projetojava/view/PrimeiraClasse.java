@@ -73,6 +73,10 @@ public class PrimeiraClasse {
 		       
 	        case 5:
 	        	
+	        	ExcluirAluno();
+	        	
+	        	opcao=0;
+	        	
 	 	       break;  
 	 	       
 	        case 6:
@@ -204,6 +208,54 @@ public class PrimeiraClasse {
 		     	  	
 	     	}	 
 	   }
+	 
+	 
+	 
+	 
+	   /* Excluir aluno da lista de alunos*/
+	   public static void ExcluirAluno() {
+		   
+		  aluno = new Aluno(); 
+		   
+	      System.out.println("Qual o nome do aluno para APAGAR ?");
+	      String nome = scan.next();
+	      
+	      
+	      aluno = ControllerAlunoDisciplina.BuscaAlunoNome(nome);
+	      
+	      if(aluno == null) {
+	    	  
+	    	  System.out.println("Aluno não Encontrado !");
+	    	  
+	    	  
+	      }else {
+	    	  
+	    	  ControllerAlunoDisciplina.alunos.remove(aluno);
+	    	  
+	    	  System.out.println("Aluno EXCLUIDO !!!!");
+	    	  
+	      }
+		   
+		   
+		   
+	   }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	
 
 }
