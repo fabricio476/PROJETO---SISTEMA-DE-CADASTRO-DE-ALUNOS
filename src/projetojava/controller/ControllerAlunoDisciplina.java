@@ -9,11 +9,26 @@ import projetojava.model.Disciplina;
 
 
 
-
+/*metodo para manter algumas disciplinas pré carregadas*/
 public class ControllerAlunoDisciplina {
+	
 	
 	public static List<Disciplina> disciplinasDisponiveis = new ArrayList<Disciplina>();
 	public static List<Aluno> alunos = new ArrayList<Aluno>();
+	
+	
+	
+	public static void carregarDisciplinas() {
+		Disciplina disciplina1 = new Disciplina();
+		Disciplina disciplina2 = new Disciplina();
+		
+		disciplina1.setNomeDisciplina("MATEMATICA");
+		disciplina2.setNomeDisciplina("PORTUGUES");
+		
+		disciplinasDisponiveis.add(disciplina1);
+		disciplinasDisponiveis.add(disciplina2);
+		
+	}
 	
 	
 	/*metodo para buscar aluno por nome*/

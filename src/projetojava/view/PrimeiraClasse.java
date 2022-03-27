@@ -19,7 +19,7 @@ public class PrimeiraClasse {
 
 	public static void main(String[] args) {
 		
-		
+		ControllerAlunoDisciplina.carregarDisciplinas();
 		
 		
 		
@@ -45,9 +45,9 @@ public class PrimeiraClasse {
 			switch (opcao) {
 			
 			case 1:
-				aluno = new Aluno();
 				
-				cadastrarAluno(aluno);
+				
+				cadastrarAluno();
 				
 				
 				opcao = 0; /*continuar na tela inicial*/
@@ -92,7 +92,7 @@ public class PrimeiraClasse {
 	  	       
 	        case 7:
 	        	
-	        	listarDisciplinas();
+	        	listarDisciplinas(ControllerAlunoDisciplina.disciplinasDisponiveis); /*recebe uma lista como parametro*/
 	        	
 	        	opcao=0;
 	        	
@@ -128,13 +128,45 @@ public class PrimeiraClasse {
 	}
 	
 	/*cadastrar aluno*/
-	 public static void cadastrarAluno(Aluno aluno) {
+	 public static void cadastrarAluno() {
+		 
+		int op=0;
 		
+		aluno = new Aluno();
+		 
 		System.out.println("nome do aluno :");
 		aluno.setNome(scan.next());
 		System.out.println("idade do aluno");
 		aluno.setIdade(scan.next());
-	
+		
+		System.out.println("Deseja adicionar disciplina ?");
+		System.out.println("1- sim | 2- não");
+		op = scan.nextInt();
+		
+		if(op == 1 ) {
+			
+		do {
+			
+			disciplina = new Disciplina();
+			
+			System.out.println(" - Disciplinas Disponiveis -");	
+			listarDisciplinas(ControllerAlunoDisciplina.disciplinasDisponiveis); /*printa as disciplinas disponiveis*/
+			System.out.println(" ");	
+			System.out.println("NUMERO da disciplina para ADICIONAR !");
+			op = scan.nextInt();
+			
+			disciplina = ControllerAlunoDisciplina.disciplinasDisponiveis.get(op-1);
+			aluno.getDisciplinas().add(disciplina);
+			
+			System.out.println("Deseja adicionar MAIS disciplinas");
+			System.out.println("1- sim | 0 - não");
+			op = scan.nextInt();
+			
+		}while(op != 0);
+		
+			
+		}
+		
 		ControllerAlunoDisciplina.alunos.add(aluno);
 	}
 	
@@ -146,6 +178,12 @@ public class PrimeiraClasse {
 			 System.out.println("--------------------------------------");
 			 System.out.println("Nome = "+ aluno.getNome());
 			 System.out.println("Idade = "+ aluno.getIdade());
+			 
+			 System.out.println("-- Disciplinas Matriculado: --");
+			 
+			 /*metodo que printa uma lista de disciplinas*/
+			 listarDisciplinas(aluno.getDisciplinas()); 
+			 
 			 System.out.println("---------------------------------------");
 		}
 	 }
@@ -160,7 +198,7 @@ public class PrimeiraClasse {
 		 nome = scan.next();
 		 
 		
-		aluno = ControllerAlunoDisciplina.BuscaAlunoNome(nome);
+		aluno = ControllerAlunoDisciplina.BuscaAlunoNome(nome); /*buscar aluno da lista pelo nome*/
 		
 		    if(aluno == null) {
 			
@@ -182,7 +220,7 @@ public class PrimeiraClasse {
 		 System.out.println("Qual o nome do aluno para editar");
 		 String nome = scan.next();
 		 
-		 aluno = ControllerAlunoDisciplina.BuscaAlunoNome(nome);
+		 aluno = ControllerAlunoDisciplina.BuscaAlunoNome(nome); /*buscar aluno da lista pelo nome*/
 		 
 
 			
@@ -242,7 +280,7 @@ public class PrimeiraClasse {
 	      String nome = scan.next();
 	      
 	      
-	      aluno = ControllerAlunoDisciplina.BuscaAlunoNome(nome);
+	      aluno = ControllerAlunoDisciplina.BuscaAlunoNome(nome); /*metodo que busca um objeto pelo perametro nome*/
 	      
 	      if(aluno == null) {
 	    	  
@@ -296,11 +334,11 @@ public class PrimeiraClasse {
 	  }
 	  
 	  /*Listar Disciplina*/
-	  public static void listarDisciplinas() {
+	  public static void listarDisciplinas(List<Disciplina> disciplinas) {
 		  
-		  for (Disciplina disciplina : ControllerAlunoDisciplina.disciplinasDisponiveis) {
+		  for (Disciplina disciplina : disciplinas) {
 			  
-			  System.out.println(disciplina.toString2());
+			  System.out.println("NUMERO: "+(disciplinas.indexOf(disciplina)+1)+" | NOME: "+ disciplina.getNomeDisciplina());
 			
 		}
 		    

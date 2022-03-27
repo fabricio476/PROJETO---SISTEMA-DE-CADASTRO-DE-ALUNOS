@@ -112,10 +112,24 @@ public class Aluno {
 
 	public void setDataMatricula(String dataMatricula) {
 		this.dataMatricula = dataMatricula;
+		
 	}
+	
     
-	//--------
-    
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+
+
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+
+//----------------------------------
+
+
 	/*calcula e retorna a media das disciplinas*/
 	public double mediAluno() {
 		
