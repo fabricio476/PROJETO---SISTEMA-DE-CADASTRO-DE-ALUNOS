@@ -1,13 +1,15 @@
 package projetojava.view;
 
 
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
 
 import projetojava.controller.ControllerAlunoDisciplina;
 import projetojava.model.Aluno;
 import projetojava.model.Disciplina;
+import projetojava.model.Pessoa;
+import projetojava.model.Secretario;
 
 
 // -- FINALIZADO VERSÃO 1
@@ -18,17 +20,31 @@ public class PrimeiraClasse {
 	/* instancia __ objeto aluno*/
 	static Aluno aluno;
 	static Disciplina disciplina;
+	
 
 	public static void main(String[] args) {
 		
 		ControllerAlunoDisciplina.carregarDisciplinas();
 		
+	
 		
 		
 		int opcao=0;
 		
 		/*tela inicial do console*/
 		do {
+			
+			
+			System.out.println("Login :");
+			String login = scan.next();
+			System.out.println("Senha :");
+			String senha = scan.next();
+			
+			
+			if(new Secretario().autenticar(login,senha)) { //--------  AUTENTICAÇÃO -------------------
+			
+				
+			
 			
 			System.out.println("-------------------------------------------------");
 			System.out.println("\t 1 - Matricular Aluno");
@@ -116,18 +132,28 @@ public class PrimeiraClasse {
 			}
 			
 			
+             }else {
 			
+			
+			      System.out.println("LOGIN E SENHA INCORRETO");
+			      System.out.println("\n");
+			
+			
+		     }
 			
 			
 			
 		}while(opcao == 0 || opcao > 7);
 		
-	
+		
+		
+		
+		
+		
+		
 		
 
-		
-
-	}
+	}//-- final main
 	
 	/*cadastrar aluno*/
 	 public static void cadastrarAluno() {
@@ -291,7 +317,7 @@ public class PrimeiraClasse {
 	    	  
 	      }else {
 	    	  
-	    	  ControllerAlunoDisciplina.alunos.remove(aluno);
+	    	  ControllerAlunoDisciplina.alunos.remove(aluno);/*metodo da (remove) da List<> */
 	    	  
 	    	  System.out.println("Aluno EXCLUIDO !!!!");
 	    	  
@@ -318,7 +344,7 @@ public class PrimeiraClasse {
 		  
 		  disciplina.setNomeDisciplina(nomeDisciplina);
 				  
-		  ControllerAlunoDisciplina.disciplinasDisponiveis.add(disciplina); 
+		  ControllerAlunoDisciplina.disciplinasDisponiveis.add(disciplina); /*metodo ADD  da List<>*/
 			
 		  System.out.println("Disciplina ADICIONADA");
 			
@@ -338,7 +364,7 @@ public class PrimeiraClasse {
 	  /*Listar Disciplina*/
 	  public static void listarDisciplinas(List<Disciplina> disciplinas) {
 		  
-		  for (Disciplina disciplina : disciplinas) {
+		  for (Disciplina disciplina : disciplinas) { /*for each*/
 			  
 			  System.out.println("NUMERO: "+(disciplinas.indexOf(disciplina)+1)+" | NOME: "+ disciplina.getNomeDisciplina());
 			
@@ -355,7 +381,7 @@ public class PrimeiraClasse {
 		  System.out.println("Qual nome da Disciplina?");
 		  nome = scan.next();
 		  
-		  disciplina = ControllerAlunoDisciplina.BuscarDisciolina(nome);
+		  disciplina = ControllerAlunoDisciplina.BuscarDisciolina(nome); /* localiza o objeto pelo nome*/
 		  
 		  int index = ControllerAlunoDisciplina.disciplinasDisponiveis.indexOf(disciplina);
 		  
