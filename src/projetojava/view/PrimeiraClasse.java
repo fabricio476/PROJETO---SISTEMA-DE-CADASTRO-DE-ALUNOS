@@ -8,7 +8,6 @@ import java.util.Scanner;
 import projetojava.controller.ControllerAlunoDisciplina;
 import projetojava.model.Aluno;
 import projetojava.model.Disciplina;
-import projetojava.model.Pessoa;
 import projetojava.model.Secretario;
 
 

@@ -1,8 +1,7 @@
 package projetojava.interfaces;
 
-public interface AlunoDAO {
+public interface DisciplinaDAO {
 
-	
 	
 	
 	

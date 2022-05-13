@@ -1,5 +1,9 @@
 package projetojava.model;
 
-public class Funcionario {
+public abstract class Funcionario  extends Pessoa{
+	
+	
+	
+	
 
 }
