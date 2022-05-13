@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import projetojava.interfaces.PermitirAcesso;
 
-public class Secretario extends Funcionario implements PermitirAcesso{
+public class Secretario extends Pessoa implements PermitirAcesso{
 
 	/*parametros*/
 	private String login = "admin";
