@@ -16,6 +16,8 @@ public class TesteConexao {
 			
 			System.out.println("Conectou !! "+conexao);
 			
+		
+			
 		}else {
 			
 			System.out.println("Erro na conexão !!");

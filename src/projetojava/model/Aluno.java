@@ -11,8 +11,9 @@ public class Aluno extends Pessoa{
 
 	
 	/* atributos*/
-	
 	private String dataMatricula;
+	private Curso curso;
+	
 	
 	/*lista de disciplinas do aluno*/
 	List<Disciplina> disciplinas = new ArrayList<Disciplina>();

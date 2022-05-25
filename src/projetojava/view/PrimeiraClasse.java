@@ -43,6 +43,8 @@ public class PrimeiraClasse {
 			if(new Secretario().autenticar(login,senha)) { //--------  AUTENTICAÇÃO -------------------
 			
 				
+			while(opcao <= 8) {
+				
 			
 			
 			System.out.println("-------------------------------------------------");
@@ -55,6 +57,7 @@ public class PrimeiraClasse {
             System.out.println("\t 6 - Cadastrar Disciplina ");
             System.out.println("\t 7 - Listar Disciplinas Disponiveis");
 			System.out.println("\t 8 - Editar Disciplinas");
+			System.out.println("\t 9 - Sair");
 			System.out.println("---------------------------------------------------");
 			opcao = scan.nextInt();
 			
@@ -122,6 +125,14 @@ public class PrimeiraClasse {
 	        opcao=0;
 	        	
 	  	       break;  
+	  	       
+             case 9:
+	        	
+            	
+	        	
+	        opcao=20;
+	        	
+	  	       break; 
 
 	 	       
 			default:
@@ -129,6 +140,8 @@ public class PrimeiraClasse {
 				opcao =0;
 				break;
 			}
+			
+			}//---- final while menu
 			
 			
              }else {

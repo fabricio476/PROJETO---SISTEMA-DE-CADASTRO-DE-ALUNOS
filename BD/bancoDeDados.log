@@ -1,0 +1,3 @@
+/*C3*/SET SCHEMA PUBLIC
+CREATE TABLE alunos( \u000a              id IDENTITY PRIMARY KEY,\u000a               nome VARCHAR(50),\u000a               cpf VARCHAR(50),\u000a               email VARCHAR(50),\u000a               senha VARCHAR(50),\u000a               id_curso INT\u000a               )
+DISCONNECT

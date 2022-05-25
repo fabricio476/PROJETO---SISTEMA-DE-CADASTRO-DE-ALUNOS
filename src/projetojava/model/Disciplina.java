@@ -3,6 +3,7 @@ package projetojava.model;
 public class Disciplina {
 	
 	/*parametro*/
+	private int idDisciplina;
 	private String nomeDisciplina;
 	private double notaDisciplina;
 	
